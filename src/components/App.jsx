@@ -21,10 +21,10 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="page__content">
       <Header />
       <CreateArea onAdd={add} />
-      <div>
+      <div className="notes__container">
         {notes.map((note, index) => {
           return (
             <Note
