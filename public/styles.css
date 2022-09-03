@@ -41,7 +41,7 @@ header {
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   grid-area: header;
-  width: 100vw;
+  width: max(100vw, 100%);
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -112,7 +112,7 @@ footer p {
 
 form.create-note {
   position: relative;
-  width: 480px;
+  width: min(480px, 95%);
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
