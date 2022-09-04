@@ -9,6 +9,7 @@ function CreateArea(props) {
     content: ""
   });
   const [inputClicked, setInputClicked] = useState(false)
+
   function handleNoteChange(evt) {
     const { name, value } = evt.target;
     setNoteTitle((prevValue) => {
@@ -45,6 +46,7 @@ function CreateArea(props) {
             evt.preventDefault();
             props.onAdd(note);
             setNoteTitle({ title: "", content: "" })
+            setInputClicked(false)
           }}><AddIcon /></Fab>
         </Zoom>
       </form>
