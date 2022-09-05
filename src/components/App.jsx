@@ -5,12 +5,15 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  let locallyStoredNotes = JSON.parse(localStorage.getItem("storedNote") || "[]");
+
+  const [notes, setNotes] = useState(locallyStoredNotes);
 
   function add(note) {
     setNotes((prevValue) => {
-      return [...prevValue, note];
+      return [note, ...prevValue];
     });
+    localStorage.setItem("storedNote", JSON.stringify([note, ...notes]))
   }
   function deleteNote(id) {
     setNotes((prevValue) => {
@@ -18,6 +21,8 @@ function App() {
         return index !== id
       })
     })
+
+    localStorage.setItem("storedNote", JSON.stringify([...notes]))
   }
 
   return (
@@ -32,6 +37,7 @@ function App() {
               id={index}
               title={note.title === "" ? "No Title" : note.title}
               content={note.content === "" ? "No Content" : note.content}
+              date={note.date === "Invalid Date" ? "No Date selected" : note.date}
               onDelete={deleteNote}
             />
           );

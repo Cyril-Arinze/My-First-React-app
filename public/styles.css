@@ -1,3 +1,7 @@
+:root {
+  --primary-color: #363062;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -10,7 +14,8 @@ html {
 }
 
 body {
-  background: #eee;
+  background-color: #827397;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
   padding: 0 16px;
   height: 100vh;
   width: 100vw;
@@ -36,7 +41,7 @@ body {
 }
 
 header {
-  background-color: #f5ba13;
+  background-color: var(--primary-color);
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -61,16 +66,28 @@ footer {
 }
 
 footer p {
-  color: #f5ba13;
+  color: #fff;
+}
+
+footer>p>a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer>p>a:hover {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: larger;
 }
 
 .note {
   background: #fff;
   border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: 0 2px 5px var(--primary-color);
   padding: 10px;
   width: auto;
-  height: 300px;
+  height: fit-content;
+  max-height: 350px;
   overflow-y: scroll;
   margin: 16px;
   position: relative;
@@ -83,6 +100,7 @@ footer p {
   grid-area: notes;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: max-content;
 
 }
 
@@ -101,7 +119,7 @@ footer p {
 .note button {
   position: relative;
   margin-right: 10px;
-  color: #f5ba13;
+  color: var(--primary-color);
   border: none;
   width: 36px;
   height: 36px;
@@ -112,12 +130,12 @@ footer p {
 
 form.create-note {
   position: relative;
-  width: min(480px, 95%);
+  width: min(700px, 95%);
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
   border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  box-shadow: 0 1px 5px var(--primary-color);
   grid-area: ContentArea;
 }
 
@@ -136,7 +154,7 @@ form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
-  background: #f5ba13;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -152,7 +170,7 @@ form.create-note button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f5ba13;
+  background: var(--primary-color);
   border-radius: 2px;
 }
 
